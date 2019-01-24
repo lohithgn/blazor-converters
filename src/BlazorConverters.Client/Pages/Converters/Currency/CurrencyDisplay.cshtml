@@ -1,0 +1,14 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div>
+            <span class="h5 font-weight-lighter">@Symbol</span>
+            <NumberDisplay DisplayLevel="4" DisplayValue="@Value" DecimalPlaces="@DecimalPlaces"></NumberDisplay>
+        </div>
+    </div>
+</div>            
+@functions 
+{
+    [Parameter] protected string Symbol { get; set; }
+    [Parameter] protected double Value { get; set; }
+    [Parameter] protected int DecimalPlaces { get; set; }
+}

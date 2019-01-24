@@ -1,0 +1,48 @@
+﻿@inherits CurrencyModel
+@page "/"
+@page "/currency"
+
+
+<div class="container-fluid">
+    <PageHeader Title="Currency" Link="/currency"></PageHeader>
+    <div class="row mt-4">
+        <div class="col-md-7">
+            <div class="card">
+                <div class="card-header bg-dark text-white">
+                    Source Currency
+                </div>
+                <div class="card-body bg-light">
+                    <CurrencyDisplay Symbol="@SourceCurrency.Symbol"
+                                     Value="@SourceCurrencyInput"
+                                     DecimalPlaces="0"></CurrencyDisplay>
+                    <CurrencyOptions Value="@SelectedSourceCurrency"
+                                     Currencies="@Currencies"
+                                     CurrencyChanged="@OnSourceCurrencyChanged"></CurrencyOptions>
+                </div>
+            </div>
+            <div class="card mt-2">
+                <div class="card-header bg-dark text-white">
+                    Target Currency
+                </div>
+                <div class="card-body bg-light">
+                    <CurrencyDisplay Symbol="@TargetCurrency.Symbol"
+                                     Value="@TargetCurrencyInput"
+                                     DecimalPlaces="2"></CurrencyDisplay>
+                    <CurrencyOptions Value="@SelectedTargetCurrency"
+                                     Currencies="@Currencies"
+                                     CurrencyChanged="@OnTargetCurrencyChanged"></CurrencyOptions>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <small>1 @SelectedSourceCurrency = @(Rate == 0 || Rate == 1 ? Rate.ToString() : Rate.ToString("N4")) @SelectedTargetCurrency</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <Keyboard OnKeyInput="OnKeyInput"></Keyboard>
+        </div>
+    </div>
+</div>
+<span class="oi oi-icon-name" title="icon name" aria-hidden="true"></span>

@@ -1,0 +1,8 @@
+﻿@page "/weightmass"
+<div class="container-fluid">
+    <PageHeader Title="Weight & Mass" Link="/weightmass"></PageHeader>
+    <GenericConverter CurrentUnitCategory="@Category"></GenericConverter>
+</div>
+@functions {
+UnitCategory Category = UnitCategory.Mass;
+}

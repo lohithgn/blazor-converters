@@ -44,3 +44,5 @@ You can find getting started instructions, docs, and tutorials for Blazor at [ht
 1. Clone this repo.
 2. Open ```BlazorConverters.sln``` in Visual Studio.
 3. Run the application
+
+<i>Note: For Currency Convertion, I have used CurrencyLayer API. You will need to sign up for free and get an API key. Add the key in ForexApiClient.cs file before you run.</i>

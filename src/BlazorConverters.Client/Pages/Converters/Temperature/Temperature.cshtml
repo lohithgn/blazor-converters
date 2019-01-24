@@ -1,0 +1,8 @@
+﻿@page "/temperature"
+<div class="container-fluid">
+    <PageHeader Title="Temperature" Link="/temperature"></PageHeader>
+    <GenericConverter CurrentUnitCategory="@Category"></GenericConverter>
+</div>
+@functions {
+UnitCategory Category = UnitCategory.Temperature;
+}

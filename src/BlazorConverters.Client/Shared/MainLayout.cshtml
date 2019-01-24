@@ -1,0 +1,24 @@
+﻿@inherits BlazorLayoutComponent
+
+<div class="page-wrapper chiller-theme sidebar-bg bg1 @(collapseNavMenu ? null : "toggled")">
+    <a id="show-sidebar" class="btn btn-sm btn-dark text-white" onclick="@ToggleNavMenu">
+        <i class="fas fa-bars"></i>
+    </a>
+    <NavMenu SidebarToggleClick="ToggleNavMenu" />
+    <main class="page-content">
+        @Body
+    </main>
+</div>
+
+@functions
+{
+
+bool collapseNavMenu = true;
+
+void ToggleNavMenu()
+{
+    collapseNavMenu = !collapseNavMenu;
+    StateHasChanged();
+}
+
+}

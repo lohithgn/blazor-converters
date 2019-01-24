@@ -1,0 +1,24 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <select class="form-control" id="sourceCurrency" value="@Value" 
+                    onchange="@CurrencyChanged">
+                @foreach (var currency in Currencies)
+                {
+                    <option value="@currency.Code">@currency.Name</option>
+                }
+            </select>
+        </div>
+    </div>
+</div>
+@functions
+{
+    [Parameter]
+    protected IEnumerable<Data.Currency> Currencies { get; set; }
+
+    [Parameter]
+    protected string Value { get; set; }
+
+    [Parameter]
+    protected Func<UIChangeEventArgs, Task> CurrencyChanged { get; set; }
+}

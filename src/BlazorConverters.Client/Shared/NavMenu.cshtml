@@ -1,0 +1,87 @@
+﻿<nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+        <div class="sidebar-brand">
+            <a href="javascript:void(0)">Blazor Converters</a>
+            <div id="close-sidebar" onclick=@(() => SidebarToggleClick())>
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="/currency">
+                        <i class="fas fa-coins"></i>
+                        <span>Currency</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/volume">
+                        <i class="fas fa-cube"></i>
+                        <span>Volume</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/length">
+                        <i class="fas fa-ruler"></i>
+                        <span>Length</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/weightmass">
+                        <i class="fas fa-weight-hanging"></i>
+                        <span>Weight & Mass</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/temperature">
+                        <i class="fas fa-thermometer-half"></i>
+                        <span>Temperature</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/energy">
+                        <i class="fas fa-fire"></i>
+                        <span>Energy</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/area">
+                        <i class="fas fa-th"></i>
+                        <span>Area</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/speed">
+                        <i class="fas fa-running"></i>
+                        <span>Speed</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/power">
+                        <i class="fas fa-bolt"></i>
+                        <span>power</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/pressure">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Pressure</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/angle">
+                        <i class="fas fa-th"></i>
+                        <span>Angle</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- sidebar-menu  -->
+    </div>
+    <!-- sidebar-content  -->
+</nav>
+
+@functions
+{
+[Parameter] Action SidebarToggleClick { get; set; }
+}

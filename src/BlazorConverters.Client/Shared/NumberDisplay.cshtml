@@ -1,0 +1,20 @@
+﻿<span class="@displayClass">@displayValueString</span>
+
+@functions
+{
+    [Parameter] protected int DisplayLevel { get; set; }
+    [Parameter] protected double DisplayValue { get; set; }
+    [Parameter] protected int DecimalPlaces { get; set; }
+    string displayValueString = string.Empty;
+    string displayClass = string.Empty;
+    protected override void OnParametersSet()
+    {
+        displayClass = $"display-{DisplayLevel}";
+        string displayFormat = "#,#";
+        if (DecimalPlaces > 0)
+        {
+            displayFormat += $".{new String('#', DecimalPlaces)}";
+        }
+        displayValueString = (DisplayValue ==0) ? DisplayValue.ToString() : DisplayValue.ToString(displayFormat);
+    }
+}

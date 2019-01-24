@@ -1,0 +1,42 @@
+﻿<div class="row m-1">
+    <div class="col-md-12 m-0">
+        <button class="btn btn-lg p-4 m-0 w-25" style="visibility:hidden"></button>
+        <button class="btn btn-lg bg-light p-4 m-0 w-25 font-weight-lighter" onclick="@(() => OnClick("CE"))">CE</button>
+        <button class="btn btn-lg bg-light p-4 m-0 w-25 font-weight-lighter" onclick="@(() => OnClick("Backspace"))"><i class="fas fa-backspace"></i></button>
+    </div>
+</div>
+<div class="row m-1">
+    <div class="col-md-12 m-0">
+        <button class="btn btn-lg bg-light p-4 m-0 w-25 font-weight-bold" onclick="@(() => OnClick("7"))">7</button>
+        <button class="btn btn-lg bg-light p-4 m-0 w-25 font-weight-bold" onclick="@(() => OnClick("8"))">8</button>
+        <button class="btn btn-lg bg-light p-4 m-0 w-25 font-weight-bold" onclick="@(() => OnClick("9"))">9</button>
+    </div>
+</div>
+<div class="row m-1">
+    <div class="col-md-12 m-0">
+        <button class="btn btn-lg bg-light p-4 m-0 w-25 font-weight-bold" onclick="@(() => OnClick("4"))">4</button>
+        <button class="btn btn-lg bg-light p-4 m-0 w-25 font-weight-bold" onclick="@(() => OnClick("5"))">5</button>
+        <button class="btn btn-lg bg-light p-4 m-0 w-25 font-weight-bold" onclick="@(() => OnClick("6"))">6</button>
+    </div>
+</div>
+<div class="row m-1">
+    <div class="col-md-12 m-0">
+        <button class="btn btn-lg bg-light p-4 m-0 w-25 font-weight-bold" onclick="@(() => OnClick("1"))">1</button>
+        <button class="btn btn-lg bg-light p-4 m-0 w-25 font-weight-bold" onclick="@(() => OnClick("2"))">2</button>
+        <button class="btn btn-lg bg-light p-4 m-0 w-25 font-weight-bold" onclick="@(() => OnClick("3"))">3</button>
+    </div>
+</div>
+<div class="row m-1">
+    <div class="col-md-12 m-0">
+        <button class="btn btn-lg p-4 m-0 w-25" style="visibility:hidden"></button>
+        <button class="btn btn-lg bg-light p-4 m-0 w-25 font-weight-bold" onclick="@(() => OnClick("0"))">0</button>
+    </div>
+</div>
+
+@functions {
+    [Parameter] protected Func<string, Task> OnKeyInput { get; set; }
+    async Task OnClick(string key)
+    {
+        await OnKeyInput?.Invoke(key);
+    }
+}

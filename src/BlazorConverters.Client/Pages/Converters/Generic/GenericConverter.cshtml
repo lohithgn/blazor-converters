@@ -1,0 +1,67 @@
+﻿@inherits GenericConverterModel
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-dark text-white">
+                    Source Unit
+                </div>
+                <div class="card-body bg-light">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div>
+                                <NumberDisplay DisplayLevel="4" DisplayValue="@SourceUnitInput" DecimalPlaces="0"></NumberDisplay>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <select class="form-control" id="sourceCurrency" value="@SourceUnit"
+                                        onchange="@OnSourceUnitChanged">
+                                    @foreach (var unit in Units)
+                                    {
+                                        <option value="@unit">@unit</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mt-2">
+                <div class="card-header bg-dark text-white">
+                    Target Unit
+                </div>
+                <div class="card-body bg-light">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div>
+                                <NumberDisplay DisplayLevel="4" DecimalPlaces="6" DisplayValue="@TargetUnitInput"></NumberDisplay>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <select class="form-control" id="sourceCurrency" vaue="@TargetUnit"
+                                        onchange="@OnTargetUnitChanged">
+                                    @foreach (var unit in Units)
+                                    {
+                                        <option value="@unit">@unit</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-12">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <Keyboard OnKeyInput="OnKeyInput"></Keyboard>
+        </div>
+    </div>

@@ -1,0 +1,8 @@
+﻿@page "/power"
+<div class="container-fluid">
+    <PageHeader Title="Power" Link="/power"></PageHeader>
+    <GenericConverter CurrentUnitCategory="@Category"></GenericConverter>
+</div>
+@functions {
+UnitCategory Category = UnitCategory.Power;
+}
